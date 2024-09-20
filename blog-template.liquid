@@ -1,0 +1,58 @@
+<!------------------Add below code into the blog file---------------------------->
+        <div class="blog-tags-tabs">
+          <ul class="tag-tabs">
+            <li data-tag="all" class="active">View All</li>
+            {% for tag in blog.all_tags %}
+              <li data-tag="{{ tag | escape }}">{{ tag | escape }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="m-blog__wrapper m-blog-list__box">
+          <div class="m-blog__list m:grid m:grid-1-cols{% if view == 'grid' %} m:grid-2-cols md:m:grid-{{ items | minus: 1 }}-cols lg:m:grid-{{ items }}-cols{% endif %}">
+            {%- for article in blog.articles -%}
+              <div class="article-card" data-tags="{{ article.tags | join: ',' }}">
+                {% render 'article-card',
+                  article: article,
+                  view: view,
+                  index: forloop.index,
+                  animated: animated,
+                  animation_effect: animation_effect
+                %}
+              </div>
+            {% endfor %}
+          </div>
+          {%- if paginate.pages > 1 -%}
+            {%- render 'pagination', paginate: paginate, animated: animated, animation_effect: animation_effect -%}
+          {%- endif -%}
+        </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var tabs = document.querySelectorAll('.tag-tabs li');
+    var articles = document.querySelectorAll('.m-blog__list .article-card');
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+
+        // Add active class to clicked tab
+        this.classList.add('active');
+
+        // Get the selected tag
+        var selectedTag = this.getAttribute('data-tag');
+
+        // Show/hide articles based on selected tag
+        articles.forEach(function(article) {
+          var articleTags = article.getAttribute('data-tags').split(',');
+
+          if (selectedTag === 'all' || articleTags.includes(selectedTag)) {
+            article.style.display = 'block';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
