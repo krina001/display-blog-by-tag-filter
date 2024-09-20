@@ -1,0 +1,92 @@
+/*------------------------------- blog tab css----------------------------------*/
+.featured-article-blog{
+  background-color: #DFDAA5;
+  padding: 60px 0;
+  margin-bottom: 70px;
+}
+.featured-article-blog .m-article .m-article__inner article .m-article__feature-image .m-image{
+  border-radius: 30px;
+}
+.featured-article-blog .m-article .m-article__header .m-article__des{
+  margin-bottom: 70px;
+}
+.featured-article-blog .m-article-card__readmore,.m-blog__list .m-article-card__content .m-article-card__readmore {
+    color: #937634;
+    border-color: #937634;
+    box-shadow: 0 0 5px 2px #937634 !important;
+  border-radius: 25px;
+}
+.featured-article-blog .m-article-card__readmore.m-button--link:before,.featured-article-blog .m-article-card__readmore.m-button--link:after,
+.m-blog__list .m-article-card__readmore.m-button--link:before,.m-blog__list .m-article-card__readmore.m-button--link:after{
+  display: none;
+}
+.m-blog__list .m-article-card__image .m-image{
+  border-radius: 30px;
+}
+.m-blog__list .m-article-card__content{
+  padding-top: 30px;
+}
+.m-blog__list .m-article-card__content .m-article-card__tags,.m-blog__list .m-article-card__content .m-article-card__title,.m-blog__list .m-article-card__content .m-article-card__excerpt{
+  color: #937634;
+}
+.blog-tags-tabs ul li{
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 8px 25px;
+  border-radius: 25px;
+  color: #937634;
+  border: 1px solid transparent;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+}
+.m-blog-list__box .m-article-card__title {
+    font-size: 28px;
+    margin: 0;
+    line-height: normal;
+    font-weight: 400;
+}
+.m-blog-list__box .m-article-card__image {
+    border-radius: 30px;
+}
+.m-blog-list__box .m-article-card__image .m-image {
+  --aspect-ratio: 3/3 !important;
+}
+.blog-tags-tabs ul li.active{
+    border: 1px solid; 
+}
+.blog-tags-tabs{
+  margin-bottom: 50px;
+}
+.m-footer .m-footer--block-newsletter{
+  width: 50%;
+}
+.m-footer--block-menu:nth-child(1){
+  width: 50%;
+}
+.m-footer--middle .m-footer--accordion{
+  position: relative;
+  justify-content: space-between;
+}
+.m-footer .m-footer--middle .m-footer--block {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.m-footer--middle{
+  padding-top: 80px;
+}
+.m-footer--bottom-footer-1{
+  padding-top: 80px;
+}
+.m-page-transition__spinner {
+    width: 250px !important;
+    height: 250px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.m-blog-list__box .m-blog__list {
+    gap: 24px;
+    row-gap: 60px;
+}
